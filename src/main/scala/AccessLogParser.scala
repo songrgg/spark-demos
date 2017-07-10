@@ -55,7 +55,7 @@ object AccessLogParser {
   def main(args: Array[String]): Unit = {
     val sparkConf = new SparkConf().setAppName("AccessLogParser")
     val sc = new SparkContext(sparkConf)
-    val logData = sc.textFile("/home/songrgg/Desktop/ivankagateway.log", 2)
+    val logData = sc.textFile("/home/songrgg/Desktop/gateway.log", 2)
     logData
       .filter(line => line.contains("webaccess"))
       .map(parser)
